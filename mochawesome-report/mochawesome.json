@@ -5,9 +5,9 @@
     "passes": 3,
     "pending": 0,
     "failures": 0,
-    "start": "2026-06-20T02:29:37.871Z",
-    "end": "2026-06-20T02:29:37.897Z",
-    "duration": 26,
+    "start": "2026-06-20T03:52:24.695Z",
+    "end": "2026-06-20T03:52:24.719Z",
+    "duration": 24,
     "testsRegistered": 3,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "59a3b9b0-6f3d-4bbb-95b6-2e5781214c64",
+      "uuid": "80300dca-731a-4ebc-9f0c-cea2f02f12aa",
       "title": "",
       "fullFile": "C:\\pagamentos\\test\\ServicoDePagamento.test.js",
       "file": "\\test\\ServicoDePagamento.test.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "d294b4c6-db34-43e3-b37c-04a778af5889",
+          "uuid": "f48807db-de2f-459b-ba40-1c265e45a919",
           "title": "ServicoDePagamento",
           "fullFile": "C:\\pagamentos\\test\\ServicoDePagamento.test.js",
           "file": "\\test\\ServicoDePagamento.test.js",
@@ -38,7 +38,7 @@
               "title": "deve armazenar pagamento com categoria cara quando valor for maior que 100",
               "fullTitle": "ServicoDePagamento deve armazenar pagamento com categoria cara quando valor for maior que 100",
               "timedOut": false,
-              "duration": 5,
+              "duration": 3,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "const servico = new ServicoDePagamento();\nservico.pagar('0321-4521-9632', 'Samar', 153.42);\nconst ultimo = servico.consultarUltimoPagamento();\nassert.deepStrictEqual(ultimo, {\n  codigoBarras: '0321-4521-9632',\n  empresa: 'Samar',\n  valor: 153.42,\n  categoria: 'cara',\n});",
               "err": {},
-              "uuid": "5e719076-3537-4199-9b15-9a7e20b55029",
-              "parentUUID": "d294b4c6-db34-43e3-b37c-04a778af5889",
+              "uuid": "2c23b16d-0e8a-48ed-8622-dab862063caa",
+              "parentUUID": "f48807db-de2f-459b-ba40-1c265e45a919",
               "isHook": false,
               "skipped": false
             },
@@ -65,8 +65,8 @@
               "context": null,
               "code": "const servico = new ServicoDePagamento();\nservico.pagar('1234-5678-9012', 'Loja X', 100.0);\nconst ultimo = servico.consultarUltimoPagamento();\nassert.deepStrictEqual(ultimo, {\n  codigoBarras: '1234-5678-9012',\n  empresa: 'Loja X',\n  valor: 100.0,\n  categoria: 'padrão',\n});",
               "err": {},
-              "uuid": "84faf557-4690-4b84-a1d0-15d0a2c14437",
-              "parentUUID": "d294b4c6-db34-43e3-b37c-04a778af5889",
+              "uuid": "3cf756a5-adbb-4e40-a9c1-2c30991230f0",
+              "parentUUID": "f48807db-de2f-459b-ba40-1c265e45a919",
               "isHook": false,
               "skipped": false
             },
@@ -74,7 +74,7 @@
               "title": "deve retornar somente o último pagamento registrado",
               "fullTitle": "ServicoDePagamento deve retornar somente o último pagamento registrado",
               "timedOut": false,
-              "duration": 1,
+              "duration": 0,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -83,22 +83,22 @@
               "context": null,
               "code": "const servico = new ServicoDePagamento();\nservico.pagar('1111-2222-3333', 'A', 50.0);\nservico.pagar('4444-5555-6666', 'B', 200.0);\nconst ultimo = servico.consultarUltimoPagamento();\nassert.strictEqual(ultimo.codigoBarras, '4444-5555-6666');\nassert.strictEqual(ultimo.empresa, 'B');\nassert.strictEqual(ultimo.valor, 200.0);\nassert.strictEqual(ultimo.categoria, 'cara');",
               "err": {},
-              "uuid": "d90ce97d-8cfa-423d-ac06-9eb9649321c6",
-              "parentUUID": "d294b4c6-db34-43e3-b37c-04a778af5889",
+              "uuid": "6eea9ec0-8035-41c3-a318-3bafafa26fa8",
+              "parentUUID": "f48807db-de2f-459b-ba40-1c265e45a919",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "5e719076-3537-4199-9b15-9a7e20b55029",
-            "84faf557-4690-4b84-a1d0-15d0a2c14437",
-            "d90ce97d-8cfa-423d-ac06-9eb9649321c6"
+            "2c23b16d-0e8a-48ed-8622-dab862063caa",
+            "3cf756a5-adbb-4e40-a9c1-2c30991230f0",
+            "6eea9ec0-8035-41c3-a318-3bafafa26fa8"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 6,
+          "duration": 3,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
