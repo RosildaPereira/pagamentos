@@ -8,16 +8,13 @@ on:
   workflow_dispatch:
 
   schedule:
-    - cron: '0 12 * * 1'
+    - cron: '0 12 * * 6'
 
 jobs:
-
   testes:
-
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -31,9 +28,3 @@ jobs:
 
       - name: Executar Testes
         run: npm test
-
-      - name: Upload Relatório
-        uses: actions/upload-artifact@v4
-        with:
-          name: relatorio-testes
-          path: mochawesome-report/
