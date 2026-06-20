@@ -1,0 +1,40 @@
+name: Pipeline QA
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+  workflow_dispatch:
+
+  schedule:
+    - cron: '0 12 * * 1'
+
+jobs:
+
+  testes:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar Dependências
+        run: npm install
+
+      - name: Executar Testes
+        run: npm test
+
+      - name: Upload Relatório
+        uses: actions/upload-artifact@v4
+        with:
+          name: relatorio-testes
+          path: mochawesome-report/
